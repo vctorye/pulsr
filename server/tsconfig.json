@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "strict": true,
+    "types": ["node"],
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./"
+  }
+}

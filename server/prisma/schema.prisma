@@ -1,0 +1,132 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ===== USER =====
+model User {
+  id              Int      @id @default(autoincrement())
+  googleId        String   @unique
+  email           String   @unique
+  name            String
+  profilePicture  String?
+  height          Float?   // in inches
+  weight          Float?   // in lbs
+  age             Int?
+  goal            String?  // 'lose_weight', 'build_muscle', 'maintain'
+  activityLevel   String?  // 'sedentary', 'light', 'moderate', 'active'
+  dailyCalorieGoal Int?
+  createdAt       DateTime @default(now())
+
+  // relationships
+  workouts        Workout[]
+  cardioLogs      CardioLog[]
+  meals           Meal[]
+  workoutPlans    WorkoutPlan[]
+}
+
+// ===== WORKOUT =====
+model Workout {
+  id            Int        @id @default(autoincrement())
+  userId        Int
+  user          User       @relation(fields: [userId], references: [id])
+  name          String
+  type          String     // 'lifting', 'hiit'
+  duration      Int?       // in minutes
+  caloriesBurned Int?
+  notes         String?
+  completedAt   DateTime?
+  createdAt     DateTime   @default(now())
+
+  // relationships
+  exercises     Exercise[]
+}
+
+// ===== EXERCISE (inside a workout) =====
+model Exercise {
+  id          Int      @id @default(autoincrement())
+  workoutId   Int
+  workout     Workout  @relation(fields: [workoutId], references: [id])
+  name        String
+  sets        Int?
+  reps        Int?
+  weight      Float?   // in lbs
+  createdAt   DateTime @default(now())
+}
+
+// ===== CARDIO LOG (running/biking) =====
+model CardioLog {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  user          User     @relation(fields: [userId], references: [id])
+  type          String   // 'running', 'biking'
+  distance      Float?   // in miles
+  duration      Int?     // in minutes
+  pace          Float?   // mins per mile
+  caloriesBurned Int?
+  completedAt   DateTime?
+  createdAt     DateTime @default(now())
+}
+
+// ===== WORKOUT PLAN =====
+model WorkoutPlan {
+  id          Int               @id @default(autoincrement())
+  userId      Int?
+  user        User?             @relation(fields: [userId], references: [id])
+  name        String
+  description String?
+  isTemplate  Boolean           @default(false) // true = preset, false = custom
+  createdAt   DateTime          @default(now())
+
+  // relationships
+  plannedWorkouts PlannedWorkout[]
+}
+
+// ===== PLANNED WORKOUT (inside a plan) =====
+model PlannedWorkout {
+  id          Int         @id @default(autoincrement())
+  planId      Int
+  plan        WorkoutPlan @relation(fields: [planId], references: [id])
+  name        String
+  dayOfWeek   String      // 'monday', 'tuesday' etc
+  exercises   Json        // store as JSON for flexibility
+  createdAt   DateTime    @default(now())
+}
+
+// ===== MEAL =====
+model Meal {
+  id            Int        @id @default(autoincrement())
+  userId        Int
+  user          User       @relation(fields: [userId], references: [id])
+  name          String     // 'breakfast', 'lunch', 'dinner', 'snack'
+  totalCalories Int?
+  totalProtein  Float?
+  totalCarbs    Float?
+  totalFats     Float?
+  loggedAt      DateTime?
+  createdAt     DateTime   @default(now())
+
+  // relationships
+  foodItems     FoodItem[]
+}
+
+// ===== FOOD ITEM (inside a meal) =====
+model FoodItem {
+  id          Int      @id @default(autoincrement())
+  mealId      Int
+  meal        Meal     @relation(fields: [mealId], references: [id])
+  name        String
+  calories    Int?
+  protein     Float?
+  carbs       Float?
+  fats        Float?
+  servingSize String?
+  quantity    Float?
+  createdAt   DateTime @default(now())
+}

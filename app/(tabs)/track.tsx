@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { useEffect, useState } from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import { useEffect, useState } from "react";
 
-
-export default function HomeScreen() {
+export default function profile() {
   const mockUser = {
     id: 1,
     name: 'Victor',
@@ -19,6 +18,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <Text>Hello</Text>
       <Text>{user?.name}</Text>
+      <Text>{user?.email}</Text>
     </View>
   );
 }
