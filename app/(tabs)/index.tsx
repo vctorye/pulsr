@@ -11,6 +11,9 @@ export default function HomeScreen() {
     dailyCalorieGoal: 2800,
   };
 
+  const mockTodayPlan = {
+    date: '1/2/23'
+  }
   const [user, setUser] = useState(mockUser);
 
 
