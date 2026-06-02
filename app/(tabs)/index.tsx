@@ -1,27 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { useEffect, useState } from 'react'
-
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { useState } from 'react'
+import { useAuth } from '@/contexts/AuthContext';
+import { useFocusEffect } from 'expo-router';
+import { useCallback } from 'react';
 
 export default function HomeScreen() {
-  const mockUser = {
-    id: 1,
-    name: 'Victor',
-    email: 'victor@test.com',
-    goal: 'build_muscle',
-    dailyCalorieGoal: 2800,
-  };
+  const { user, token } = useAuth();
+  const [posts, setPosts] = useState<any[]>([]);
 
-  const mockTodayPlan = {
-    date: '1/2/23'
-  }
-  const [user, setUser] = useState(mockUser);
-
-
+  useFocusEffect(
+    useCallback(() => {
+      if (!user?.id) return;
+      fetch(`http://localhost:3000/friends/feed?userId=${user.id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => res.json())
+        .then(data => { if (Array.isArray(data)) setPosts(data) });
+    }, [user])
+  );
 
   return (
     <View style={styles.container}>
       <Text>Hello</Text>
-      <Text>{user?.name}</Text>
     </View>
   );
 }

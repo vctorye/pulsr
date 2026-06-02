@@ -30,60 +30,103 @@ export type UserAvgAggregateOutputType = {
   id: number | null
   height: number | null
   weight: number | null
+  weightGoal: number | null
+  weeklyGoal: number | null
   age: number | null
   dailyCalorieGoal: number | null
+  benchPR: number | null
+  squatPR: number | null
+  deadliftPR: number | null
 }
 
 export type UserSumAggregateOutputType = {
   id: number | null
   height: number | null
   weight: number | null
+  weightGoal: number | null
+  weeklyGoal: number | null
   age: number | null
   dailyCalorieGoal: number | null
+  benchPR: number | null
+  squatPR: number | null
+  deadliftPR: number | null
 }
 
 export type UserMinAggregateOutputType = {
   id: number | null
-  googleId: string | null
   email: string | null
+  password: string | null
   name: string | null
   profilePicture: string | null
   height: number | null
   weight: number | null
+  weightGoal: number | null
+  weeklyGoal: number | null
   age: number | null
   goal: string | null
   activityLevel: string | null
   dailyCalorieGoal: number | null
+  onboarded: boolean | null
+  benchPR: number | null
+  squatPR: number | null
+  deadliftPR: number | null
+  milePR: string | null
+  fiveKPR: string | null
+  tenKPR: string | null
+  halfMarathonPR: string | null
+  marathonPR: string | null
   createdAt: Date | null
 }
 
 export type UserMaxAggregateOutputType = {
   id: number | null
-  googleId: string | null
   email: string | null
+  password: string | null
   name: string | null
   profilePicture: string | null
   height: number | null
   weight: number | null
+  weightGoal: number | null
+  weeklyGoal: number | null
   age: number | null
   goal: string | null
   activityLevel: string | null
   dailyCalorieGoal: number | null
+  onboarded: boolean | null
+  benchPR: number | null
+  squatPR: number | null
+  deadliftPR: number | null
+  milePR: string | null
+  fiveKPR: string | null
+  tenKPR: string | null
+  halfMarathonPR: string | null
+  marathonPR: string | null
   createdAt: Date | null
 }
 
 export type UserCountAggregateOutputType = {
   id: number
-  googleId: number
   email: number
+  password: number
   name: number
   profilePicture: number
   height: number
   weight: number
+  weightGoal: number
+  weeklyGoal: number
   age: number
   goal: number
   activityLevel: number
   dailyCalorieGoal: number
+  onboarded: number
+  benchPR: number
+  squatPR: number
+  deadliftPR: number
+  milePR: number
+  fiveKPR: number
+  tenKPR: number
+  halfMarathonPR: number
+  marathonPR: number
   createdAt: number
   _all: number
 }
@@ -93,60 +136,103 @@ export type UserAvgAggregateInputType = {
   id?: true
   height?: true
   weight?: true
+  weightGoal?: true
+  weeklyGoal?: true
   age?: true
   dailyCalorieGoal?: true
+  benchPR?: true
+  squatPR?: true
+  deadliftPR?: true
 }
 
 export type UserSumAggregateInputType = {
   id?: true
   height?: true
   weight?: true
+  weightGoal?: true
+  weeklyGoal?: true
   age?: true
   dailyCalorieGoal?: true
+  benchPR?: true
+  squatPR?: true
+  deadliftPR?: true
 }
 
 export type UserMinAggregateInputType = {
   id?: true
-  googleId?: true
   email?: true
+  password?: true
   name?: true
   profilePicture?: true
   height?: true
   weight?: true
+  weightGoal?: true
+  weeklyGoal?: true
   age?: true
   goal?: true
   activityLevel?: true
   dailyCalorieGoal?: true
+  onboarded?: true
+  benchPR?: true
+  squatPR?: true
+  deadliftPR?: true
+  milePR?: true
+  fiveKPR?: true
+  tenKPR?: true
+  halfMarathonPR?: true
+  marathonPR?: true
   createdAt?: true
 }
 
 export type UserMaxAggregateInputType = {
   id?: true
-  googleId?: true
   email?: true
+  password?: true
   name?: true
   profilePicture?: true
   height?: true
   weight?: true
+  weightGoal?: true
+  weeklyGoal?: true
   age?: true
   goal?: true
   activityLevel?: true
   dailyCalorieGoal?: true
+  onboarded?: true
+  benchPR?: true
+  squatPR?: true
+  deadliftPR?: true
+  milePR?: true
+  fiveKPR?: true
+  tenKPR?: true
+  halfMarathonPR?: true
+  marathonPR?: true
   createdAt?: true
 }
 
 export type UserCountAggregateInputType = {
   id?: true
-  googleId?: true
   email?: true
+  password?: true
   name?: true
   profilePicture?: true
   height?: true
   weight?: true
+  weightGoal?: true
+  weeklyGoal?: true
   age?: true
   goal?: true
   activityLevel?: true
   dailyCalorieGoal?: true
+  onboarded?: true
+  benchPR?: true
+  squatPR?: true
+  deadliftPR?: true
+  milePR?: true
+  fiveKPR?: true
+  tenKPR?: true
+  halfMarathonPR?: true
+  marathonPR?: true
   createdAt?: true
   _all?: true
 }
@@ -239,16 +325,27 @@ export type UserGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 
 export type UserGroupByOutputType = {
   id: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture: string | null
   height: number | null
   weight: number | null
+  weightGoal: number | null
+  weeklyGoal: number | null
   age: number | null
   goal: string | null
   activityLevel: string | null
   dailyCalorieGoal: number | null
+  onboarded: boolean
+  benchPR: number | null
+  squatPR: number | null
+  deadliftPR: number | null
+  milePR: string | null
+  fiveKPR: string | null
+  tenKPR: string | null
+  halfMarathonPR: string | null
+  marathonPR: string | null
   createdAt: Date
   _count: UserCountAggregateOutputType | null
   _avg: UserAvgAggregateOutputType | null
@@ -277,76 +374,129 @@ export type UserWhereInput = {
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   id?: Prisma.IntFilter<"User"> | number
-  googleId?: Prisma.StringFilter<"User"> | string
   email?: Prisma.StringFilter<"User"> | string
+  password?: Prisma.StringFilter<"User"> | string
   name?: Prisma.StringFilter<"User"> | string
   profilePicture?: Prisma.StringNullableFilter<"User"> | string | null
   height?: Prisma.FloatNullableFilter<"User"> | number | null
   weight?: Prisma.FloatNullableFilter<"User"> | number | null
+  weightGoal?: Prisma.FloatNullableFilter<"User"> | number | null
+  weeklyGoal?: Prisma.FloatNullableFilter<"User"> | number | null
   age?: Prisma.IntNullableFilter<"User"> | number | null
   goal?: Prisma.StringNullableFilter<"User"> | string | null
   activityLevel?: Prisma.StringNullableFilter<"User"> | string | null
   dailyCalorieGoal?: Prisma.IntNullableFilter<"User"> | number | null
+  onboarded?: Prisma.BoolFilter<"User"> | boolean
+  benchPR?: Prisma.FloatNullableFilter<"User"> | number | null
+  squatPR?: Prisma.FloatNullableFilter<"User"> | number | null
+  deadliftPR?: Prisma.FloatNullableFilter<"User"> | number | null
+  milePR?: Prisma.StringNullableFilter<"User"> | string | null
+  fiveKPR?: Prisma.StringNullableFilter<"User"> | string | null
+  tenKPR?: Prisma.StringNullableFilter<"User"> | string | null
+  halfMarathonPR?: Prisma.StringNullableFilter<"User"> | string | null
+  marathonPR?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   workouts?: Prisma.WorkoutListRelationFilter
   cardioLogs?: Prisma.CardioLogListRelationFilter
   meals?: Prisma.MealListRelationFilter
   workoutPlans?: Prisma.WorkoutPlanListRelationFilter
+  friends?: Prisma.FriendshipListRelationFilter
+  friendOf?: Prisma.FriendshipListRelationFilter
+  posts?: Prisma.PostListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  googleId?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   name?: Prisma.SortOrder
   profilePicture?: Prisma.SortOrderInput | Prisma.SortOrder
   height?: Prisma.SortOrderInput | Prisma.SortOrder
   weight?: Prisma.SortOrderInput | Prisma.SortOrder
+  weightGoal?: Prisma.SortOrderInput | Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrderInput | Prisma.SortOrder
   age?: Prisma.SortOrderInput | Prisma.SortOrder
   goal?: Prisma.SortOrderInput | Prisma.SortOrder
   activityLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrderInput | Prisma.SortOrder
+  onboarded?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  squatPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  milePR?: Prisma.SortOrderInput | Prisma.SortOrder
+  fiveKPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  tenKPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  halfMarathonPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  marathonPR?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   workouts?: Prisma.WorkoutOrderByRelationAggregateInput
   cardioLogs?: Prisma.CardioLogOrderByRelationAggregateInput
   meals?: Prisma.MealOrderByRelationAggregateInput
   workoutPlans?: Prisma.WorkoutPlanOrderByRelationAggregateInput
+  friends?: Prisma.FriendshipOrderByRelationAggregateInput
+  friendOf?: Prisma.FriendshipOrderByRelationAggregateInput
+  posts?: Prisma.PostOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  googleId?: string
   email?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
+  password?: Prisma.StringFilter<"User"> | string
   name?: Prisma.StringFilter<"User"> | string
   profilePicture?: Prisma.StringNullableFilter<"User"> | string | null
   height?: Prisma.FloatNullableFilter<"User"> | number | null
   weight?: Prisma.FloatNullableFilter<"User"> | number | null
+  weightGoal?: Prisma.FloatNullableFilter<"User"> | number | null
+  weeklyGoal?: Prisma.FloatNullableFilter<"User"> | number | null
   age?: Prisma.IntNullableFilter<"User"> | number | null
   goal?: Prisma.StringNullableFilter<"User"> | string | null
   activityLevel?: Prisma.StringNullableFilter<"User"> | string | null
   dailyCalorieGoal?: Prisma.IntNullableFilter<"User"> | number | null
+  onboarded?: Prisma.BoolFilter<"User"> | boolean
+  benchPR?: Prisma.FloatNullableFilter<"User"> | number | null
+  squatPR?: Prisma.FloatNullableFilter<"User"> | number | null
+  deadliftPR?: Prisma.FloatNullableFilter<"User"> | number | null
+  milePR?: Prisma.StringNullableFilter<"User"> | string | null
+  fiveKPR?: Prisma.StringNullableFilter<"User"> | string | null
+  tenKPR?: Prisma.StringNullableFilter<"User"> | string | null
+  halfMarathonPR?: Prisma.StringNullableFilter<"User"> | string | null
+  marathonPR?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   workouts?: Prisma.WorkoutListRelationFilter
   cardioLogs?: Prisma.CardioLogListRelationFilter
   meals?: Prisma.MealListRelationFilter
   workoutPlans?: Prisma.WorkoutPlanListRelationFilter
-}, "id" | "googleId" | "email">
+  friends?: Prisma.FriendshipListRelationFilter
+  friendOf?: Prisma.FriendshipListRelationFilter
+  posts?: Prisma.PostListRelationFilter
+}, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  googleId?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   name?: Prisma.SortOrder
   profilePicture?: Prisma.SortOrderInput | Prisma.SortOrder
   height?: Prisma.SortOrderInput | Prisma.SortOrder
   weight?: Prisma.SortOrderInput | Prisma.SortOrder
+  weightGoal?: Prisma.SortOrderInput | Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrderInput | Prisma.SortOrder
   age?: Prisma.SortOrderInput | Prisma.SortOrder
   goal?: Prisma.SortOrderInput | Prisma.SortOrder
   activityLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrderInput | Prisma.SortOrder
+  onboarded?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  squatPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  milePR?: Prisma.SortOrderInput | Prisma.SortOrder
+  fiveKPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  tenKPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  halfMarathonPR?: Prisma.SortOrderInput | Prisma.SortOrder
+  marathonPR?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _avg?: Prisma.UserAvgOrderByAggregateInput
@@ -360,149 +510,260 @@ export type UserScalarWhereWithAggregatesInput = {
   OR?: Prisma.UserScalarWhereWithAggregatesInput[]
   NOT?: Prisma.UserScalarWhereWithAggregatesInput | Prisma.UserScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"User"> | number
-  googleId?: Prisma.StringWithAggregatesFilter<"User"> | string
   email?: Prisma.StringWithAggregatesFilter<"User"> | string
+  password?: Prisma.StringWithAggregatesFilter<"User"> | string
   name?: Prisma.StringWithAggregatesFilter<"User"> | string
   profilePicture?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   height?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
   weight?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  weightGoal?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  weeklyGoal?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
   age?: Prisma.IntNullableWithAggregatesFilter<"User"> | number | null
   goal?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   activityLevel?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   dailyCalorieGoal?: Prisma.IntNullableWithAggregatesFilter<"User"> | number | null
+  onboarded?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
+  benchPR?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  squatPR?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  deadliftPR?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  milePR?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  fiveKPR?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  tenKPR?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  halfMarathonPR?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  marathonPR?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
 }
 
 export type UserCreateInput = {
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
   cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
   meals?: Prisma.MealCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
   id?: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
   cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
   meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
   cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
   cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
   id?: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
 }
 
 export type UserUpdateManyMutationInput = {
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  googleId?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   name?: Prisma.SortOrder
   profilePicture?: Prisma.SortOrder
   height?: Prisma.SortOrder
   weight?: Prisma.SortOrder
+  weightGoal?: Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrder
   age?: Prisma.SortOrder
   goal?: Prisma.SortOrder
   activityLevel?: Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrder
+  onboarded?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrder
+  squatPR?: Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrder
+  milePR?: Prisma.SortOrder
+  fiveKPR?: Prisma.SortOrder
+  tenKPR?: Prisma.SortOrder
+  halfMarathonPR?: Prisma.SortOrder
+  marathonPR?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -510,37 +771,64 @@ export type UserAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   height?: Prisma.SortOrder
   weight?: Prisma.SortOrder
+  weightGoal?: Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrder
   age?: Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrder
+  squatPR?: Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  googleId?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   name?: Prisma.SortOrder
   profilePicture?: Prisma.SortOrder
   height?: Prisma.SortOrder
   weight?: Prisma.SortOrder
+  weightGoal?: Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrder
   age?: Prisma.SortOrder
   goal?: Prisma.SortOrder
   activityLevel?: Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrder
+  onboarded?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrder
+  squatPR?: Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrder
+  milePR?: Prisma.SortOrder
+  fiveKPR?: Prisma.SortOrder
+  tenKPR?: Prisma.SortOrder
+  halfMarathonPR?: Prisma.SortOrder
+  marathonPR?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  googleId?: Prisma.SortOrder
   email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   name?: Prisma.SortOrder
   profilePicture?: Prisma.SortOrder
   height?: Prisma.SortOrder
   weight?: Prisma.SortOrder
+  weightGoal?: Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrder
   age?: Prisma.SortOrder
   goal?: Prisma.SortOrder
   activityLevel?: Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrder
+  onboarded?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrder
+  squatPR?: Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrder
+  milePR?: Prisma.SortOrder
+  fiveKPR?: Prisma.SortOrder
+  tenKPR?: Prisma.SortOrder
+  halfMarathonPR?: Prisma.SortOrder
+  marathonPR?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -548,8 +836,13 @@ export type UserSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   height?: Prisma.SortOrder
   weight?: Prisma.SortOrder
+  weightGoal?: Prisma.SortOrder
+  weeklyGoal?: Prisma.SortOrder
   age?: Prisma.SortOrder
   dailyCalorieGoal?: Prisma.SortOrder
+  benchPR?: Prisma.SortOrder
+  squatPR?: Prisma.SortOrder
+  deadliftPR?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -584,6 +877,10 @@ export type NullableIntFieldUpdateOperationsInput = {
   decrement?: number
   multiply?: number
   divide?: number
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -656,39 +953,109 @@ export type UserUpdateOneRequiredWithoutMealsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutMealsInput, Prisma.UserUpdateWithoutMealsInput>, Prisma.UserUncheckedUpdateWithoutMealsInput>
 }
 
+export type UserCreateNestedOneWithoutFriendsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFriendsInput, Prisma.UserUncheckedCreateWithoutFriendsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFriendsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutFriendOfInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFriendOfInput, Prisma.UserUncheckedCreateWithoutFriendOfInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFriendOfInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutFriendsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFriendsInput, Prisma.UserUncheckedCreateWithoutFriendsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFriendsInput
+  upsert?: Prisma.UserUpsertWithoutFriendsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFriendsInput, Prisma.UserUpdateWithoutFriendsInput>, Prisma.UserUncheckedUpdateWithoutFriendsInput>
+}
+
+export type UserUpdateOneRequiredWithoutFriendOfNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFriendOfInput, Prisma.UserUncheckedCreateWithoutFriendOfInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFriendOfInput
+  upsert?: Prisma.UserUpsertWithoutFriendOfInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFriendOfInput, Prisma.UserUpdateWithoutFriendOfInput>, Prisma.UserUncheckedUpdateWithoutFriendOfInput>
+}
+
+export type UserCreateNestedOneWithoutPostsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPostsInput, Prisma.UserUncheckedCreateWithoutPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPostsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPostsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPostsInput, Prisma.UserUncheckedCreateWithoutPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPostsInput
+  upsert?: Prisma.UserUpsertWithoutPostsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPostsInput, Prisma.UserUpdateWithoutPostsInput>, Prisma.UserUncheckedUpdateWithoutPostsInput>
+}
+
 export type UserCreateWithoutWorkoutsInput = {
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
   meals?: Prisma.MealCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutWorkoutsInput = {
   id?: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
   meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutWorkoutsInput = {
@@ -708,73 +1075,129 @@ export type UserUpdateToOneWithWhereWithoutWorkoutsInput = {
 }
 
 export type UserUpdateWithoutWorkoutsInput = {
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWorkoutsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutCardioLogsInput = {
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
   meals?: Prisma.MealCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCardioLogsInput = {
   id?: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
   meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCardioLogsInput = {
@@ -794,73 +1217,129 @@ export type UserUpdateToOneWithWhereWithoutCardioLogsInput = {
 }
 
 export type UserUpdateWithoutCardioLogsInput = {
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCardioLogsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutWorkoutPlansInput = {
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
   cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
   meals?: Prisma.MealCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutWorkoutPlansInput = {
   id?: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
   cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
   meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutWorkoutPlansInput = {
@@ -880,73 +1359,129 @@ export type UserUpdateToOneWithWhereWithoutWorkoutPlansInput = {
 }
 
 export type UserUpdateWithoutWorkoutPlansInput = {
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
   cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWorkoutPlansInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
   cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
   meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMealsInput = {
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
   cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMealsInput = {
   id?: number
-  googleId: string
   email: string
+  password: string
   name: string
   profilePicture?: string | null
   height?: number | null
   weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
   age?: number | null
   goal?: string | null
   activityLevel?: string | null
   dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
   createdAt?: Date | string
   workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
   cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMealsInput = {
@@ -966,38 +1501,492 @@ export type UserUpdateToOneWithWhereWithoutMealsInput = {
 }
 
 export type UserUpdateWithoutMealsInput = {
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
   cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMealsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  googleId?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
   cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutFriendsInput = {
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutFriendsInput = {
+  id?: number
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutFriendsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFriendsInput, Prisma.UserUncheckedCreateWithoutFriendsInput>
+}
+
+export type UserCreateWithoutFriendOfInput = {
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutFriendOfInput = {
+  id?: number
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutFriendOfInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFriendOfInput, Prisma.UserUncheckedCreateWithoutFriendOfInput>
+}
+
+export type UserUpsertWithoutFriendsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFriendsInput, Prisma.UserUncheckedUpdateWithoutFriendsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFriendsInput, Prisma.UserUncheckedCreateWithoutFriendsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFriendsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFriendsInput, Prisma.UserUncheckedUpdateWithoutFriendsInput>
+}
+
+export type UserUpdateWithoutFriendsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFriendsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserUpsertWithoutFriendOfInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFriendOfInput, Prisma.UserUncheckedUpdateWithoutFriendOfInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFriendOfInput, Prisma.UserUncheckedCreateWithoutFriendOfInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFriendOfInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFriendOfInput, Prisma.UserUncheckedUpdateWithoutFriendOfInput>
+}
+
+export type UserUpdateWithoutFriendOfInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFriendOfInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutPostsInput = {
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+}
+
+export type UserUncheckedCreateWithoutPostsInput = {
+  id?: number
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+}
+
+export type UserCreateOrConnectWithoutPostsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPostsInput, Prisma.UserUncheckedCreateWithoutPostsInput>
+}
+
+export type UserUpsertWithoutPostsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPostsInput, Prisma.UserUncheckedUpdateWithoutPostsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPostsInput, Prisma.UserUncheckedCreateWithoutPostsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPostsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPostsInput, Prisma.UserUncheckedUpdateWithoutPostsInput>
+}
+
+export type UserUpdateWithoutPostsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPostsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
 }
 
 
@@ -1010,6 +1999,9 @@ export type UserCountOutputType = {
   cardioLogs: number
   meals: number
   workoutPlans: number
+  friends: number
+  friendOf: number
+  posts: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1017,6 +2009,9 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   cardioLogs?: boolean | UserCountOutputTypeCountCardioLogsArgs
   meals?: boolean | UserCountOutputTypeCountMealsArgs
   workoutPlans?: boolean | UserCountOutputTypeCountWorkoutPlansArgs
+  friends?: boolean | UserCountOutputTypeCountFriendsArgs
+  friendOf?: boolean | UserCountOutputTypeCountFriendOfArgs
+  posts?: boolean | UserCountOutputTypeCountPostsArgs
 }
 
 /**
@@ -1057,78 +2052,149 @@ export type UserCountOutputTypeCountWorkoutPlansArgs<ExtArgs extends runtime.Typ
   where?: Prisma.WorkoutPlanWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFriendsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FriendshipWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFriendOfArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FriendshipWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PostWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  googleId?: boolean
   email?: boolean
+  password?: boolean
   name?: boolean
   profilePicture?: boolean
   height?: boolean
   weight?: boolean
+  weightGoal?: boolean
+  weeklyGoal?: boolean
   age?: boolean
   goal?: boolean
   activityLevel?: boolean
   dailyCalorieGoal?: boolean
+  onboarded?: boolean
+  benchPR?: boolean
+  squatPR?: boolean
+  deadliftPR?: boolean
+  milePR?: boolean
+  fiveKPR?: boolean
+  tenKPR?: boolean
+  halfMarathonPR?: boolean
+  marathonPR?: boolean
   createdAt?: boolean
   workouts?: boolean | Prisma.User$workoutsArgs<ExtArgs>
   cardioLogs?: boolean | Prisma.User$cardioLogsArgs<ExtArgs>
   meals?: boolean | Prisma.User$mealsArgs<ExtArgs>
   workoutPlans?: boolean | Prisma.User$workoutPlansArgs<ExtArgs>
+  friends?: boolean | Prisma.User$friendsArgs<ExtArgs>
+  friendOf?: boolean | Prisma.User$friendOfArgs<ExtArgs>
+  posts?: boolean | Prisma.User$postsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  googleId?: boolean
   email?: boolean
+  password?: boolean
   name?: boolean
   profilePicture?: boolean
   height?: boolean
   weight?: boolean
+  weightGoal?: boolean
+  weeklyGoal?: boolean
   age?: boolean
   goal?: boolean
   activityLevel?: boolean
   dailyCalorieGoal?: boolean
+  onboarded?: boolean
+  benchPR?: boolean
+  squatPR?: boolean
+  deadliftPR?: boolean
+  milePR?: boolean
+  fiveKPR?: boolean
+  tenKPR?: boolean
+  halfMarathonPR?: boolean
+  marathonPR?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  googleId?: boolean
   email?: boolean
+  password?: boolean
   name?: boolean
   profilePicture?: boolean
   height?: boolean
   weight?: boolean
+  weightGoal?: boolean
+  weeklyGoal?: boolean
   age?: boolean
   goal?: boolean
   activityLevel?: boolean
   dailyCalorieGoal?: boolean
+  onboarded?: boolean
+  benchPR?: boolean
+  squatPR?: boolean
+  deadliftPR?: boolean
+  milePR?: boolean
+  fiveKPR?: boolean
+  tenKPR?: boolean
+  halfMarathonPR?: boolean
+  marathonPR?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
   id?: boolean
-  googleId?: boolean
   email?: boolean
+  password?: boolean
   name?: boolean
   profilePicture?: boolean
   height?: boolean
   weight?: boolean
+  weightGoal?: boolean
+  weeklyGoal?: boolean
   age?: boolean
   goal?: boolean
   activityLevel?: boolean
   dailyCalorieGoal?: boolean
+  onboarded?: boolean
+  benchPR?: boolean
+  squatPR?: boolean
+  deadliftPR?: boolean
+  milePR?: boolean
+  fiveKPR?: boolean
+  tenKPR?: boolean
+  halfMarathonPR?: boolean
+  marathonPR?: boolean
   createdAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "googleId" | "email" | "name" | "profilePicture" | "height" | "weight" | "age" | "goal" | "activityLevel" | "dailyCalorieGoal" | "createdAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password" | "name" | "profilePicture" | "height" | "weight" | "weightGoal" | "weeklyGoal" | "age" | "goal" | "activityLevel" | "dailyCalorieGoal" | "onboarded" | "benchPR" | "squatPR" | "deadliftPR" | "milePR" | "fiveKPR" | "tenKPR" | "halfMarathonPR" | "marathonPR" | "createdAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   workouts?: boolean | Prisma.User$workoutsArgs<ExtArgs>
   cardioLogs?: boolean | Prisma.User$cardioLogsArgs<ExtArgs>
   meals?: boolean | Prisma.User$mealsArgs<ExtArgs>
   workoutPlans?: boolean | Prisma.User$workoutPlansArgs<ExtArgs>
+  friends?: boolean | Prisma.User$friendsArgs<ExtArgs>
+  friendOf?: boolean | Prisma.User$friendOfArgs<ExtArgs>
+  posts?: boolean | Prisma.User$postsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1141,19 +2207,33 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     cardioLogs: Prisma.$CardioLogPayload<ExtArgs>[]
     meals: Prisma.$MealPayload<ExtArgs>[]
     workoutPlans: Prisma.$WorkoutPlanPayload<ExtArgs>[]
+    friends: Prisma.$FriendshipPayload<ExtArgs>[]
+    friendOf: Prisma.$FriendshipPayload<ExtArgs>[]
+    posts: Prisma.$PostPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    googleId: string
     email: string
+    password: string
     name: string
     profilePicture: string | null
     height: number | null
     weight: number | null
+    weightGoal: number | null
+    weeklyGoal: number | null
     age: number | null
     goal: string | null
     activityLevel: string | null
     dailyCalorieGoal: number | null
+    onboarded: boolean
+    benchPR: number | null
+    squatPR: number | null
+    deadliftPR: number | null
+    milePR: string | null
+    fiveKPR: string | null
+    tenKPR: string | null
+    halfMarathonPR: string | null
+    marathonPR: string | null
     createdAt: Date
   }, ExtArgs["result"]["user"]>
   composites: {}
@@ -1553,6 +2633,9 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   cardioLogs<T extends Prisma.User$cardioLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$cardioLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CardioLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   meals<T extends Prisma.User$mealsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$mealsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MealPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   workoutPlans<T extends Prisma.User$workoutPlansArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$workoutPlansArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WorkoutPlanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  friends<T extends Prisma.User$friendsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$friendsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FriendshipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  friendOf<T extends Prisma.User$friendOfArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$friendOfArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FriendshipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  posts<T extends Prisma.User$postsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1583,16 +2666,27 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
  */
 export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'Int'>
-  readonly googleId: Prisma.FieldRef<"User", 'String'>
   readonly email: Prisma.FieldRef<"User", 'String'>
+  readonly password: Prisma.FieldRef<"User", 'String'>
   readonly name: Prisma.FieldRef<"User", 'String'>
   readonly profilePicture: Prisma.FieldRef<"User", 'String'>
   readonly height: Prisma.FieldRef<"User", 'Float'>
   readonly weight: Prisma.FieldRef<"User", 'Float'>
+  readonly weightGoal: Prisma.FieldRef<"User", 'Float'>
+  readonly weeklyGoal: Prisma.FieldRef<"User", 'Float'>
   readonly age: Prisma.FieldRef<"User", 'Int'>
   readonly goal: Prisma.FieldRef<"User", 'String'>
   readonly activityLevel: Prisma.FieldRef<"User", 'String'>
   readonly dailyCalorieGoal: Prisma.FieldRef<"User", 'Int'>
+  readonly onboarded: Prisma.FieldRef<"User", 'Boolean'>
+  readonly benchPR: Prisma.FieldRef<"User", 'Float'>
+  readonly squatPR: Prisma.FieldRef<"User", 'Float'>
+  readonly deadliftPR: Prisma.FieldRef<"User", 'Float'>
+  readonly milePR: Prisma.FieldRef<"User", 'String'>
+  readonly fiveKPR: Prisma.FieldRef<"User", 'String'>
+  readonly tenKPR: Prisma.FieldRef<"User", 'String'>
+  readonly halfMarathonPR: Prisma.FieldRef<"User", 'String'>
+  readonly marathonPR: Prisma.FieldRef<"User", 'String'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
 }
     
@@ -2080,6 +3174,78 @@ export type User$workoutPlansArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.WorkoutPlanScalarFieldEnum | Prisma.WorkoutPlanScalarFieldEnum[]
+}
+
+/**
+ * User.friends
+ */
+export type User$friendsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Friendship
+   */
+  select?: Prisma.FriendshipSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Friendship
+   */
+  omit?: Prisma.FriendshipOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FriendshipInclude<ExtArgs> | null
+  where?: Prisma.FriendshipWhereInput
+  orderBy?: Prisma.FriendshipOrderByWithRelationInput | Prisma.FriendshipOrderByWithRelationInput[]
+  cursor?: Prisma.FriendshipWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FriendshipScalarFieldEnum | Prisma.FriendshipScalarFieldEnum[]
+}
+
+/**
+ * User.friendOf
+ */
+export type User$friendOfArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Friendship
+   */
+  select?: Prisma.FriendshipSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Friendship
+   */
+  omit?: Prisma.FriendshipOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FriendshipInclude<ExtArgs> | null
+  where?: Prisma.FriendshipWhereInput
+  orderBy?: Prisma.FriendshipOrderByWithRelationInput | Prisma.FriendshipOrderByWithRelationInput[]
+  cursor?: Prisma.FriendshipWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FriendshipScalarFieldEnum | Prisma.FriendshipScalarFieldEnum[]
+}
+
+/**
+ * User.posts
+ */
+export type User$postsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Post
+   */
+  select?: Prisma.PostSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Post
+   */
+  omit?: Prisma.PostOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PostInclude<ExtArgs> | null
+  where?: Prisma.PostWhereInput
+  orderBy?: Prisma.PostOrderByWithRelationInput | Prisma.PostOrderByWithRelationInput[]
+  cursor?: Prisma.PostWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PostScalarFieldEnum | Prisma.PostScalarFieldEnum[]
 }
 
 /**

@@ -58,6 +58,8 @@ export const ModelName = {
   WorkoutPlan: 'WorkoutPlan',
   PlannedWorkout: 'PlannedWorkout',
   Meal: 'Meal',
+  Friendship: 'Friendship',
+  Post: 'Post',
   FoodItem: 'FoodItem'
 } as const
 
@@ -79,16 +81,27 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const UserScalarFieldEnum = {
   id: 'id',
-  googleId: 'googleId',
   email: 'email',
+  password: 'password',
   name: 'name',
   profilePicture: 'profilePicture',
   height: 'height',
   weight: 'weight',
+  weightGoal: 'weightGoal',
+  weeklyGoal: 'weeklyGoal',
   age: 'age',
   goal: 'goal',
   activityLevel: 'activityLevel',
   dailyCalorieGoal: 'dailyCalorieGoal',
+  onboarded: 'onboarded',
+  benchPR: 'benchPR',
+  squatPR: 'squatPR',
+  deadliftPR: 'deadliftPR',
+  milePR: 'milePR',
+  fiveKPR: 'fiveKPR',
+  tenKPR: 'tenKPR',
+  halfMarathonPR: 'halfMarathonPR',
+  marathonPR: 'marathonPR',
   createdAt: 'createdAt'
 } as const
 
@@ -175,6 +188,29 @@ export const MealScalarFieldEnum = {
 } as const
 
 export type MealScalarFieldEnum = (typeof MealScalarFieldEnum)[keyof typeof MealScalarFieldEnum]
+
+
+export const FriendshipScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  friendId: 'friendId',
+  createdAt: 'createdAt'
+} as const
+
+export type FriendshipScalarFieldEnum = (typeof FriendshipScalarFieldEnum)[keyof typeof FriendshipScalarFieldEnum]
+
+
+export const PostScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  type: 'type',
+  mealId: 'mealId',
+  caption: 'caption',
+  photoUrl: 'photoUrl',
+  createdAt: 'createdAt'
+} as const
+
+export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
 
 
 export const FoodItemScalarFieldEnum = {

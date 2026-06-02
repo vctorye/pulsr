@@ -1,43 +1,30 @@
 import { StyleSheet, Text, View, ScrollView, Image, useColorScheme, TouchableOpacity } from "react-native";
+import { useState, useEffect } from "react";
 import Colors from "@/constants/Colors";
 import vicpfp from '../../assets/images/vic-pfp.png';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Profile() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
   const styles = makeStyles(colors);
+  const { user, token } = useAuth();
+  const [profileData, setProfileData] = useState<any>(null)
 
-  const mockUser = {
-    name: 'Victor',
-    email: 'victor@test.com',
-    profilePicture: null,
-    height: 72,
-    weight: 205,
-    weightGoal: 185,
-    weeklyGoal: 1,
-    age: 25,
-    goal: 'Build Muscle',
-    dailyCalorieGoal: 2800,
-    activityLevel: 'active',
-  };
-
-  const mockPRs = {
-    bench: 355,
-    squat: 465,
-    deadlift: 625,
-    mile: '6:30',
-    fiveK: '22:00',
-    tenK: '46:00',
-    halfMarathon: '1:45:00',
-    marathon: null,
-  };
+  useEffect(() => {
+    fetch(`http://localhost:3000/users/${user?.id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(res => res.json())
+    .then(data => setProfileData(data));
+}, []);
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={vicpfp} style={styles.avatar} />
-        <Text style={styles.name}>{mockUser.name}</Text>
+        <Text style={styles.name}>{profileData?.name ?? '...'}</Text>
         <TouchableOpacity onPress={() => console.log('settings pressed')}>
           <AntDesign name="setting" size={24} color={colors.text} />
         </TouchableOpacity>
@@ -46,34 +33,34 @@ export default function Profile() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Lifting PRs</Text>
         <View style={styles.prRow}>
-          <Text style={styles.text}>Squat: {mockPRs.squat} lbs</Text>
-          <Text style={styles.text}>Bench: {mockPRs.bench} lbs</Text>
-          <Text style={styles.text}>Deadlift: {mockPRs.deadlift} lbs</Text>
+          <Text style={styles.text}>Squat: {profileData?.squatPR ?? 'TBD'} lbs</Text>
+          <Text style={styles.text}>Bench: {profileData?.benchPR ?? 'TBD'} lbs</Text>
+          <Text style={styles.text}>Deadlift: {profileData?.deadliftPR ?? 'TBD'} lbs</Text>
         </View>
       </View>
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Running PRs</Text>
         <View style={styles.prRow}>
-          <Text style={styles.text}>Mile: {mockPRs.mile}</Text>
-          <Text style={styles.text}>5K: {mockPRs.fiveK}</Text>
-          <Text style={styles.text}>10K: {mockPRs.tenK}</Text>
+          <Text style={styles.text}>Mile: {profileData?.milePR ?? 'TBD'}</Text>
+          <Text style={styles.text}>5K: {profileData?.fiveKPR ?? 'TBD'}</Text>
+          <Text style={styles.text}>10K: {profileData?.tenKPR ?? 'TBD'}</Text>
         </View>
         <View style={styles.prRow}>
-          <Text style={styles.text}>Half: {mockPRs.halfMarathon ?? 'TBD'}</Text>
-          <Text style={styles.text}>Full: {mockPRs.marathon ?? 'TBD'}</Text>
+          <Text style={styles.text}>Half: {profileData?.halfMarathonPR ?? 'TBD'}</Text>
+          <Text style={styles.text}>Full: {profileData?.marathonPR ?? 'TBD'}</Text>
         </View>
       </View>
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Goals</Text>
         <View style={styles.prRow}>
-          <Text style={styles.text}>Goal: {mockUser.goal}</Text>
-          <Text style={styles.text}>Target: {mockUser.weightGoal} lbs</Text>
+          <Text style={styles.text}>Goal: {profileData?.goal ?? 'TBD'}</Text>
+          <Text style={styles.text}>Target: {profileData?.weightGoal ?? 'TBD'} lbs</Text>
         </View>
         <View style={styles.prRow}>
-          <Text style={styles.text}>Daily Calories: {mockUser.dailyCalorieGoal}</Text>
-          <Text style={styles.text}>Pace: {mockUser.weeklyGoal} lbs/week</Text>
+          <Text style={styles.text}>Daily Calories: {profileData?.dailyCalorieGoal ?? 'TBD'}</Text>
+          <Text style={styles.text}>Pace: {profileData?.weeklyGoal ?? 'TBD'} lbs/week</Text>
         </View>
       </View>
     </ScrollView>
@@ -84,7 +71,7 @@ const makeStyles = (colors: typeof Colors.light) => StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: colors.background,
+    backgroundColor: '#ffdddd',
   },
   header: {
     flexDirection: 'row',

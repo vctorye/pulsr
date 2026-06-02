@@ -44,21 +44,15 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <FontAwesome5 name="running" size={20} color="black" />,
         }}
       />
-       <Tabs.Screen
-        name="track"
-        options={{
-          title: 'Track',
-          tabBarIcon: ({ color }) => <AntDesign name="play-circle" size={20} color="black" />,
-        }}
-      />
-       <Tabs.Screen
+
+      <Tabs.Screen
         name="meals"
         options={{
           title: 'Meals',
           tabBarIcon: ({ color }) => <FontAwesome6 name="bowl-food" size={20} color="black" />,
         }}
       />
-       <Tabs.Screen
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',

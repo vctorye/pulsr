@@ -17,11 +17,24 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { googleId, email, name } = req.body;
+  const { email, name } = req.body;
   const user = await prisma.user.create({
-    data: { googleId, email, name },
+    data: { email, name, password: '' },
   });
   res.status(201).json(user);
+});
+
+router.patch("/:id", async (req, res) => {
+  const id = Number(req.params.id);
+  if (!id || isNaN(id)) {
+    res.status(400).json({ error: "Invalid user id" });
+    return;
+  }
+  const user = await prisma.user.update({
+    where: { id },
+    data: req.body,
+  });
+  res.json(user);
 });
 
 export default router;

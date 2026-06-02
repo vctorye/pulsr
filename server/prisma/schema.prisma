@@ -11,24 +11,43 @@ datasource db {
 
 // ===== USER =====
 model User {
-  id              Int      @id @default(autoincrement())
-  googleId        String   @unique
-  email           String   @unique
-  name            String
-  profilePicture  String?
-  height          Float?   // in inches
-  weight          Float?   // in lbs
-  age             Int?
-  goal            String?  // 'lose_weight', 'build_muscle', 'maintain'
-  activityLevel   String?  // 'sedentary', 'light', 'moderate', 'active'
+  id               Int      @id @default(autoincrement())
+  email            String   @unique
+  password         String
+  name             String
+  profilePicture   String?
+  height           Float?   // in inches
+  weight           Float?   // in lbs
+  weightGoal       Float?   // in lbs
+  weeklyGoal       Float?   // lbs per week
+  age              Int?
+  goal             String?  // 'lose_weight', 'build_muscle', 'maintain'
+  activityLevel    String?  // 'sedentary', 'light', 'moderate', 'active'
   dailyCalorieGoal Int?
-  createdAt       DateTime @default(now())
+  onboarded        Boolean  @default(false)
+
+  // lifting PRs (in lbs)
+  benchPR          Float?
+  squatPR          Float?
+  deadliftPR       Float?
+
+  // cardio PRs (stored as "MM:SS" or "H:MM:SS" strings)
+  milePR           String?
+  fiveKPR          String?
+  tenKPR           String?
+  halfMarathonPR   String?
+  marathonPR       String?
+
+  createdAt        DateTime @default(now())
 
   // relationships
-  workouts        Workout[]
-  cardioLogs      CardioLog[]
-  meals           Meal[]
-  workoutPlans    WorkoutPlan[]
+  workouts         Workout[]
+  cardioLogs       CardioLog[]
+  meals            Meal[]
+  workoutPlans     WorkoutPlan[]
+  friends          Friendship[] @relation("UserFriends")
+  friendOf         Friendship[] @relation("FriendOf")
+  posts            Post[]
 }
 
 // ===== WORKOUT =====
@@ -114,6 +133,30 @@ model Meal {
 
   // relationships
   foodItems     FoodItem[]
+  posts         Post[]
+}
+
+// ===== FRIENDSHIP =====
+model Friendship {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  friendId   Int
+  user       User     @relation("UserFriends", fields: [userId], references: [id])
+  friend     User     @relation("FriendOf", fields: [friendId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+// ===== POST =====
+model Post {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  type      String   // 'meal' or 'workout'
+  mealId    Int?
+  meal      Meal?    @relation(fields: [mealId], references: [id])
+  caption   String?
+  photoUrl  String?
+  createdAt DateTime @default(now())
 }
 
 // ===== FOOD ITEM (inside a meal) =====

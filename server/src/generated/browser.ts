@@ -53,6 +53,16 @@ export type PlannedWorkout = Prisma.PlannedWorkoutModel
  */
 export type Meal = Prisma.MealModel
 /**
+ * Model Friendship
+ * 
+ */
+export type Friendship = Prisma.FriendshipModel
+/**
+ * Model Post
+ * 
+ */
+export type Post = Prisma.PostModel
+/**
  * Model FoodItem
  * 
  */
