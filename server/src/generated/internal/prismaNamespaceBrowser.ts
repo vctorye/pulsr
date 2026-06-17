@@ -206,6 +206,7 @@ export const PostScalarFieldEnum = {
   type: 'type',
   mealId: 'mealId',
   caption: 'caption',
+  description: 'description',
   photoUrl: 'photoUrl',
   createdAt: 'createdAt'
 } as const

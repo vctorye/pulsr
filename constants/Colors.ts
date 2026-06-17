@@ -1,5 +1,5 @@
 
-const accentColor = '#e26972';
+const accentColor = '#50a2fa';
 
 export default {
   light: {

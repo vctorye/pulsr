@@ -44,6 +44,7 @@ export type PostMinAggregateOutputType = {
   type: string | null
   mealId: number | null
   caption: string | null
+  description: string | null
   photoUrl: string | null
   createdAt: Date | null
 }
@@ -54,6 +55,7 @@ export type PostMaxAggregateOutputType = {
   type: string | null
   mealId: number | null
   caption: string | null
+  description: string | null
   photoUrl: string | null
   createdAt: Date | null
 }
@@ -64,6 +66,7 @@ export type PostCountAggregateOutputType = {
   type: number
   mealId: number
   caption: number
+  description: number
   photoUrl: number
   createdAt: number
   _all: number
@@ -88,6 +91,7 @@ export type PostMinAggregateInputType = {
   type?: true
   mealId?: true
   caption?: true
+  description?: true
   photoUrl?: true
   createdAt?: true
 }
@@ -98,6 +102,7 @@ export type PostMaxAggregateInputType = {
   type?: true
   mealId?: true
   caption?: true
+  description?: true
   photoUrl?: true
   createdAt?: true
 }
@@ -108,6 +113,7 @@ export type PostCountAggregateInputType = {
   type?: true
   mealId?: true
   caption?: true
+  description?: true
   photoUrl?: true
   createdAt?: true
   _all?: true
@@ -205,6 +211,7 @@ export type PostGroupByOutputType = {
   type: string
   mealId: number | null
   caption: string | null
+  description: string | null
   photoUrl: string | null
   createdAt: Date
   _count: PostCountAggregateOutputType | null
@@ -238,6 +245,7 @@ export type PostWhereInput = {
   type?: Prisma.StringFilter<"Post"> | string
   mealId?: Prisma.IntNullableFilter<"Post"> | number | null
   caption?: Prisma.StringNullableFilter<"Post"> | string | null
+  description?: Prisma.StringNullableFilter<"Post"> | string | null
   photoUrl?: Prisma.StringNullableFilter<"Post"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Post"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -250,6 +258,7 @@ export type PostOrderByWithRelationInput = {
   type?: Prisma.SortOrder
   mealId?: Prisma.SortOrderInput | Prisma.SortOrder
   caption?: Prisma.SortOrderInput | Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
   photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -265,6 +274,7 @@ export type PostWhereUniqueInput = Prisma.AtLeast<{
   type?: Prisma.StringFilter<"Post"> | string
   mealId?: Prisma.IntNullableFilter<"Post"> | number | null
   caption?: Prisma.StringNullableFilter<"Post"> | string | null
+  description?: Prisma.StringNullableFilter<"Post"> | string | null
   photoUrl?: Prisma.StringNullableFilter<"Post"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Post"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -277,6 +287,7 @@ export type PostOrderByWithAggregationInput = {
   type?: Prisma.SortOrder
   mealId?: Prisma.SortOrderInput | Prisma.SortOrder
   caption?: Prisma.SortOrderInput | Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
   photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.PostCountOrderByAggregateInput
@@ -295,6 +306,7 @@ export type PostScalarWhereWithAggregatesInput = {
   type?: Prisma.StringWithAggregatesFilter<"Post"> | string
   mealId?: Prisma.IntNullableWithAggregatesFilter<"Post"> | number | null
   caption?: Prisma.StringNullableWithAggregatesFilter<"Post"> | string | null
+  description?: Prisma.StringNullableWithAggregatesFilter<"Post"> | string | null
   photoUrl?: Prisma.StringNullableWithAggregatesFilter<"Post"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Post"> | Date | string
 }
@@ -302,6 +314,7 @@ export type PostScalarWhereWithAggregatesInput = {
 export type PostCreateInput = {
   type: string
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutPostsInput
@@ -314,6 +327,7 @@ export type PostUncheckedCreateInput = {
   type: string
   mealId?: number | null
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
 }
@@ -321,6 +335,7 @@ export type PostUncheckedCreateInput = {
 export type PostUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutPostsNestedInput
@@ -333,6 +348,7 @@ export type PostUncheckedUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   mealId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -343,6 +359,7 @@ export type PostCreateManyInput = {
   type: string
   mealId?: number | null
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
 }
@@ -350,6 +367,7 @@ export type PostCreateManyInput = {
 export type PostUpdateManyMutationInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -360,6 +378,7 @@ export type PostUncheckedUpdateManyInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   mealId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -380,6 +399,7 @@ export type PostCountOrderByAggregateInput = {
   type?: Prisma.SortOrder
   mealId?: Prisma.SortOrder
   caption?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   photoUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -396,6 +416,7 @@ export type PostMaxOrderByAggregateInput = {
   type?: Prisma.SortOrder
   mealId?: Prisma.SortOrder
   caption?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   photoUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -406,6 +427,7 @@ export type PostMinOrderByAggregateInput = {
   type?: Prisma.SortOrder
   mealId?: Prisma.SortOrder
   caption?: Prisma.SortOrder
+  description?: Prisma.SortOrder
   photoUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -503,6 +525,7 @@ export type PostUncheckedUpdateManyWithoutMealNestedInput = {
 export type PostCreateWithoutUserInput = {
   type: string
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
   meal?: Prisma.MealCreateNestedOneWithoutPostsInput
@@ -513,6 +536,7 @@ export type PostUncheckedCreateWithoutUserInput = {
   type: string
   mealId?: number | null
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
 }
@@ -552,6 +576,7 @@ export type PostScalarWhereInput = {
   type?: Prisma.StringFilter<"Post"> | string
   mealId?: Prisma.IntNullableFilter<"Post"> | number | null
   caption?: Prisma.StringNullableFilter<"Post"> | string | null
+  description?: Prisma.StringNullableFilter<"Post"> | string | null
   photoUrl?: Prisma.StringNullableFilter<"Post"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Post"> | Date | string
 }
@@ -559,6 +584,7 @@ export type PostScalarWhereInput = {
 export type PostCreateWithoutMealInput = {
   type: string
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutPostsInput
@@ -569,6 +595,7 @@ export type PostUncheckedCreateWithoutMealInput = {
   userId: number
   type: string
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
 }
@@ -604,6 +631,7 @@ export type PostCreateManyUserInput = {
   type: string
   mealId?: number | null
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
 }
@@ -611,6 +639,7 @@ export type PostCreateManyUserInput = {
 export type PostUpdateWithoutUserInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   meal?: Prisma.MealUpdateOneWithoutPostsNestedInput
@@ -621,6 +650,7 @@ export type PostUncheckedUpdateWithoutUserInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   mealId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -630,6 +660,7 @@ export type PostUncheckedUpdateManyWithoutUserInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   mealId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -639,6 +670,7 @@ export type PostCreateManyMealInput = {
   userId: number
   type: string
   caption?: string | null
+  description?: string | null
   photoUrl?: string | null
   createdAt?: Date | string
 }
@@ -646,6 +678,7 @@ export type PostCreateManyMealInput = {
 export type PostUpdateWithoutMealInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutPostsNestedInput
@@ -656,6 +689,7 @@ export type PostUncheckedUpdateWithoutMealInput = {
   userId?: Prisma.IntFieldUpdateOperationsInput | number
   type?: Prisma.StringFieldUpdateOperationsInput | string
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -665,6 +699,7 @@ export type PostUncheckedUpdateManyWithoutMealInput = {
   userId?: Prisma.IntFieldUpdateOperationsInput | number
   type?: Prisma.StringFieldUpdateOperationsInput | string
   caption?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -677,6 +712,7 @@ export type PostSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   type?: boolean
   mealId?: boolean
   caption?: boolean
+  description?: boolean
   photoUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -689,6 +725,7 @@ export type PostSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   type?: boolean
   mealId?: boolean
   caption?: boolean
+  description?: boolean
   photoUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -701,6 +738,7 @@ export type PostSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   type?: boolean
   mealId?: boolean
   caption?: boolean
+  description?: boolean
   photoUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -713,11 +751,12 @@ export type PostSelectScalar = {
   type?: boolean
   mealId?: boolean
   caption?: boolean
+  description?: boolean
   photoUrl?: boolean
   createdAt?: boolean
 }
 
-export type PostOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "type" | "mealId" | "caption" | "photoUrl" | "createdAt", ExtArgs["result"]["post"]>
+export type PostOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "type" | "mealId" | "caption" | "description" | "photoUrl" | "createdAt", ExtArgs["result"]["post"]>
 export type PostInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   meal?: boolean | Prisma.Post$mealArgs<ExtArgs>
@@ -743,6 +782,7 @@ export type $PostPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     type: string
     mealId: number | null
     caption: string | null
+    description: string | null
     photoUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["post"]>
@@ -1175,6 +1215,7 @@ export interface PostFieldRefs {
   readonly type: Prisma.FieldRef<"Post", 'String'>
   readonly mealId: Prisma.FieldRef<"Post", 'Int'>
   readonly caption: Prisma.FieldRef<"Post", 'String'>
+  readonly description: Prisma.FieldRef<"Post", 'String'>
   readonly photoUrl: Prisma.FieldRef<"Post", 'String'>
   readonly createdAt: Prisma.FieldRef<"Post", 'DateTime'>
 }

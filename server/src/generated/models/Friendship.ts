@@ -231,6 +231,7 @@ export type FriendshipOrderByWithRelationInput = {
 
 export type FriendshipWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  userId_friendId?: Prisma.FriendshipUserIdFriendIdCompoundUniqueInput
   AND?: Prisma.FriendshipWhereInput | Prisma.FriendshipWhereInput[]
   OR?: Prisma.FriendshipWhereInput[]
   NOT?: Prisma.FriendshipWhereInput | Prisma.FriendshipWhereInput[]
@@ -239,7 +240,7 @@ export type FriendshipWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Friendship"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   friend?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-}, "id">
+}, "id" | "userId_friendId">
 
 export type FriendshipOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -315,6 +316,11 @@ export type FriendshipListRelationFilter = {
 
 export type FriendshipOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type FriendshipUserIdFriendIdCompoundUniqueInput = {
+  userId: number
+  friendId: number
 }
 
 export type FriendshipCountOrderByAggregateInput = {

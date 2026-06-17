@@ -24,23 +24,37 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: useClientOnlyValue(false, true),
-        tabBarLabelStyle: { fontSize: 10 },
+        tabBarActiveTintColor: '#50a2fa',
+        tabBarInactiveTintColor: '#5c5c5c78',
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 30,
+          width: 330,
+          borderRadius: 35,
+          marginLeft: 36,
+          height: 55,
+          backgroundColor: '#fff0c8e9',
+          shadowColor: '#000',
+          shadowOffset: { width: 1, height: 4 },
+          shadowOpacity: .3,
+          shadowRadius: 10,
+          elevation: 8,
+          
+        }
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Homepage',
-          tabBarIcon: ({ color }) => <Entypo name="home" size={20} color="black" />,
-
+          tabBarIcon: ({ color }) => <Entypo name="home" size={16} color={color} />,
         }}
       />
       <Tabs.Screen
         name="workouts"
         options={{
           title: 'Workouts',
-          tabBarIcon: ({ color }) => <FontAwesome5 name="running" size={20} color="black" />,
+          tabBarIcon: ({ color }) => <FontAwesome5 name="running" size={16} color={color} />,
         }}
       />
 
@@ -48,14 +62,14 @@ export default function TabLayout() {
         name="meals"
         options={{
           title: 'Meals',
-          tabBarIcon: ({ color }) => <FontAwesome6 name="bowl-food" size={20} color="black" />,
+          tabBarIcon: ({ color }) => <FontAwesome6 name="bowl-food" size={16} color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <AntDesign name="profile" size={20} color="black" />,
+          tabBarIcon: ({ color }) => <AntDesign name="profile" size={16} color={color} />,
         }}
       />
     </Tabs>

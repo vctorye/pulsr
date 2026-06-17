@@ -60,8 +60,9 @@ function RootLayoutNav() {
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
           <Stack.Screen name="food-search" options={{ presentation: 'modal', headerShown: false }} />
-          <Stack.Screen name="post-workout" options={{ presentation: 'transparentModal', headerShown: false }} />
-
+          <Stack.Screen name="post-workout" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="post-meal" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="add-friend" options={{ presentation: 'modal', headerShown: false }} />
         </Stack>
       </ThemeProvider>
     </AuthProvider>

@@ -1,16 +1,18 @@
 import { StyleSheet, Text, View, ScrollView, Image, useColorScheme, TouchableOpacity } from "react-native";
 import { useState, useEffect } from "react";
 import Colors from "@/constants/Colors";
-import vicpfp from '../../assets/images/vic-pfp.png';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "expo-router";
 
 export default function Profile() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
   const styles = makeStyles(colors);
-  const { user, token } = useAuth();
+  const { user, token, logout } = useAuth();
+  const router = useRouter();
   const [profileData, setProfileData] = useState<any>(null)
+  
 
   useEffect(() => {
     fetch(`http://localhost:3000/users/${user?.id}`, {
@@ -23,7 +25,8 @@ export default function Profile() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Image source={vicpfp} style={styles.avatar} />
+        {profileData?.profilePicture && <Image source={{ uri: profileData.profilePicture }} style={{ width: 90, height: 90, borderRadius: 45 }} />}
+
         <Text style={styles.name}>{profileData?.name ?? '...'}</Text>
         <TouchableOpacity onPress={() => console.log('settings pressed')}>
           <AntDesign name="setting" size={24} color={colors.text} />
@@ -63,6 +66,9 @@ export default function Profile() {
           <Text style={styles.text}>Pace: {profileData?.weeklyGoal ?? 'TBD'} lbs/week</Text>
         </View>
       </View>
+      <TouchableOpacity onPress={() => { logout(); router.replace('/login'); }} style={{ margin: 20, padding: 14, backgroundColor: '#ff3b30', borderRadius: 10, alignItems: 'center' }}>
+        <Text style={{ color: '#fff', fontWeight: 'bold' }}>Log Out</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
@@ -71,13 +77,13 @@ const makeStyles = (colors: typeof Colors.light) => StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#ffdddd',
+    backgroundColor: '#fdf8f8',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: 16,
+    justifyContent: 'center',
+    gap: 55,
     paddingVertical: 16,
   },
   avatar: {
@@ -94,7 +100,7 @@ const makeStyles = (colors: typeof Colors.light) => StyleSheet.create({
     marginTop: 16,
     padding: 16,
     borderRadius: 12,
-    backgroundColor: colors.card,
+    backgroundColor: "#fdfdfd",
   },
   sectionTitle: {
     fontSize: 16,

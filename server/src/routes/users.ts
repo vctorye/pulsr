@@ -8,6 +8,24 @@ router.get("/", async (_req, res) => {
   res.json(users);
 });
 
+router.get("/search", async (req, res) => {
+    const { q, userId } = req.query;
+    const users = await prisma.user.findMany({
+        where: {
+            AND: [
+                { id: { not: Number(userId) } },
+                {
+                    OR: [
+                        { name: { contains: String(q), mode: 'insensitive' } },
+                        { email: { contains: String(q), mode: 'insensitive' } }
+                    ]
+                }
+            ]
+        }
+    });
+    res.json(users);
+});
+
 router.get("/:id", async (req, res) => {
   const id = Number(req.params.id);
   const user = await prisma.user.findUnique({

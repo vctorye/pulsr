@@ -30,7 +30,8 @@ router.get("/feed", async(req: Request, res: Response) => {
         include: { friend: true }
     });
 
-    const friendIds = friends.map(f => f.friendId);      // ← map over it here
+    const friendIds = friends.map(f => f.friendId);
+    friendIds.push(Number(userId));
 
     const posts = await prisma.post.findMany({
         where: { userId: { in: friendIds } },
@@ -38,6 +39,19 @@ router.get("/feed", async(req: Request, res: Response) => {
         orderBy: { createdAt: 'desc' }
     });
     res.json(posts);
+})
+
+router.get("/search", async(req: Request, res: Response) => {
+    const { q } = req.query;
+    const users = await prisma.user.findMany({
+        where: {
+            OR: [
+                { name: { contains: String(q), mode: 'insensitive' } },
+                { email: { contains: String(q), mode: 'insensitive' } }
+            ]
+        }
+    })
+    res.json(users)
 })
 
 export default router

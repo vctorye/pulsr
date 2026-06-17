@@ -48,7 +48,7 @@ export default function MealsScreen() {
     setSelectedDate(d);
   }
 
-  const deleteMeal = (id) => {
+  const deleteMeal = (id: any) => {
     fetch(`http://localhost:3000/meals/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
@@ -57,15 +57,15 @@ export default function MealsScreen() {
   }
 
   const getMealByType = (type: string) => 
-    meals.filter(m => m.name === type);
+    meals.filter((m: any) => m.name === type);
   const totalCalories = meals.flatMap((m: any) => m.foodItems).reduce((sum: number, item: any) => sum + (item.calories ?? 0), 0);
   const remaining = (calorieCount ?? 0) - totalCalories;
 
   const renderSection = (type: string, label: string) => (
     <View style={styles.section}>
       <Text style={styles.sectionTitle}>{label}</Text>
-      {getMealByType(type).flatMap(m => m.foodItems).map((item: any) => (
-        <View key={item.id}>
+      {getMealByType(type).flatMap((m: any) => m.foodItems).map((item: any) => (
+        <View key={item.id} style={styles.foodItemRow}>
         <Text  style={styles.foodItem}>{item.name}</Text>
         <TouchableOpacity onPress={() => deleteMeal(item.id)}><Text>x</Text></TouchableOpacity>
         </View>
@@ -83,22 +83,43 @@ export default function MealsScreen() {
         <Text>{selectedDate.toISOString().split('T')[0]}</Text>
         <TouchableOpacity onPress={goForward}><Text>→</Text></TouchableOpacity>
       </View>
-      <Text style={{ color: remaining < 0 ? 'red' : 'green' }}>
-        {remaining} cal remaining
+      <Text style={[styles.calorieCount, { color: remaining < 0 ? 'red' : 'green' }]}>
+        {calorieCount} cals - {totalCalories} cals = {remaining} cals 
       </Text>
+      
       {renderSection('breakfast', 'Breakfast')}
       {renderSection('lunch', 'Lunch')}
       {renderSection('dinner', 'Dinner')}
       {renderSection('snack', 'Snack')}
+      <TouchableOpacity style={styles.postMeal} onPress={() => router.push({ pathname: '/post-meal' })}>
+        <Text style={styles.postMealText}>Add meal</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16},
-  section: { marginBottom: 25, padding: 16, borderRadius: 12, backgroundColor: '#fafafa' },
+  container: { flex: 1, padding: 16, backgroundColor:'#fffbf0'},
+  calorieCount: {fontSize: 18, padding: 20, backgroundColor: '#ffffffe0',fontWeight: 'bold', borderRadius: 8, marginBottom: 25, marginTop: 20, shadowColor: '#000', shadowOffset: {width: 1, height: 2}, shadowOpacity: 0.1, shadowRadius: 4} ,
+  section: { marginBottom: 20, padding: 16, borderRadius: 12, backgroundColor: '#ffffff',shadowColor: '#000', shadowOffset: {width: 1, height: 1}, shadowOpacity: 0.1, shadowRadius: 2 },
   sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
-  foodItem: { fontSize: 14, paddingVertical: 4, color: '#333' },
+  foodItem: { fontSize: 14, paddingVertical: 4, color: '#000000' },
+  foodItemRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    shadowColor: '#000', shadowOffset: {width: 1, height: 1}, shadowOpacity: .25, shadowRadius: 2 
+
+  },
   addBtn: { marginTop: 8 },
   addBtnText: { color: '#007AFF', fontWeight: '600' },
+    postMeal: {
+    backgroundColor: '#7c90e8', padding: 14, borderRadius: 10, alignItems: 'center', color: '#fff',
+    marginLeft: 40,
+    marginRight: 40
+  },
+  postMealText: {
+    color: '#fff', 
+    fontWeight: '600'
+  },
 });
