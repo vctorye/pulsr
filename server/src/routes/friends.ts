@@ -11,7 +11,14 @@ router.get("/", async(req: Request, res: Response) => {
     });
     res.json(friends);
 })
-
+router.get('/followers', async(req: Request, res:Response) => {
+    const { userId } = req.query;
+    const following = await prisma.friendship.findMany({
+        where: {friendId: Number(userId)},
+        include: { user: true }
+    });
+    res.json(following)
+})
 router.post("/", async(req: Request, res: Response) => {
     const { userId, friendId } = req.body;
     const friendship = await prisma.friendship.create({
@@ -35,7 +42,7 @@ router.get("/feed", async(req: Request, res: Response) => {
 
     const posts = await prisma.post.findMany({
         where: { userId: { in: friendIds } },
-        include: { user: true, meal: true },
+        include: { user: true, meal: true, likes: true, comments: { include: { user: true } } },
         orderBy: { createdAt: 'desc' }
     });
     res.json(posts);

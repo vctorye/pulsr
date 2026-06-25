@@ -18,4 +18,17 @@ router.post('/', async(req:Request, res: Response) => {
     res.json(post);
 })
 
+router.get('/', async(req: Request, res:Response) => {
+    const {userId} = req.query;
+        console.log('userId:', userId)
+
+    const posts = await prisma.post.findMany({
+        where: { userId: Number(userId) },
+        orderBy: {createdAt: 'desc'},
+        include: { user: true }
+
+    });
+    res.json(posts)
+})
+
 export default router

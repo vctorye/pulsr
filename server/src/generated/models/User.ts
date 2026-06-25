@@ -403,6 +403,8 @@ export type UserWhereInput = {
   friends?: Prisma.FriendshipListRelationFilter
   friendOf?: Prisma.FriendshipListRelationFilter
   posts?: Prisma.PostListRelationFilter
+  likes?: Prisma.LikeListRelationFilter
+  comments?: Prisma.CommentListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -436,6 +438,8 @@ export type UserOrderByWithRelationInput = {
   friends?: Prisma.FriendshipOrderByRelationAggregateInput
   friendOf?: Prisma.FriendshipOrderByRelationAggregateInput
   posts?: Prisma.PostOrderByRelationAggregateInput
+  likes?: Prisma.LikeOrderByRelationAggregateInput
+  comments?: Prisma.CommentOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -472,6 +476,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   friends?: Prisma.FriendshipListRelationFilter
   friendOf?: Prisma.FriendshipListRelationFilter
   posts?: Prisma.PostListRelationFilter
+  likes?: Prisma.LikeListRelationFilter
+  comments?: Prisma.CommentListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -564,6 +570,8 @@ export type UserCreateInput = {
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -597,6 +605,8 @@ export type UserUncheckedCreateInput = {
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -629,6 +639,8 @@ export type UserUpdateInput = {
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -662,6 +674,8 @@ export type UserUncheckedUpdateInput = {
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -995,6 +1009,34 @@ export type UserUpdateOneRequiredWithoutPostsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPostsInput, Prisma.UserUpdateWithoutPostsInput>, Prisma.UserUncheckedUpdateWithoutPostsInput>
 }
 
+export type UserCreateNestedOneWithoutLikesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLikesInput, Prisma.UserUncheckedCreateWithoutLikesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLikesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutLikesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLikesInput, Prisma.UserUncheckedCreateWithoutLikesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLikesInput
+  upsert?: Prisma.UserUpsertWithoutLikesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLikesInput, Prisma.UserUpdateWithoutLikesInput>, Prisma.UserUncheckedUpdateWithoutLikesInput>
+}
+
+export type UserCreateNestedOneWithoutCommentsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCommentsInput, Prisma.UserUncheckedCreateWithoutCommentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCommentsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCommentsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCommentsInput, Prisma.UserUncheckedCreateWithoutCommentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCommentsInput
+  upsert?: Prisma.UserUpsertWithoutCommentsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCommentsInput, Prisma.UserUpdateWithoutCommentsInput>, Prisma.UserUncheckedUpdateWithoutCommentsInput>
+}
+
 export type UserCreateWithoutWorkoutsInput = {
   email: string
   password: string
@@ -1024,6 +1066,8 @@ export type UserCreateWithoutWorkoutsInput = {
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutWorkoutsInput = {
@@ -1056,6 +1100,8 @@ export type UserUncheckedCreateWithoutWorkoutsInput = {
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutWorkoutsInput = {
@@ -1103,6 +1149,8 @@ export type UserUpdateWithoutWorkoutsInput = {
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWorkoutsInput = {
@@ -1135,6 +1183,8 @@ export type UserUncheckedUpdateWithoutWorkoutsInput = {
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutCardioLogsInput = {
@@ -1166,6 +1216,8 @@ export type UserCreateWithoutCardioLogsInput = {
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCardioLogsInput = {
@@ -1198,6 +1250,8 @@ export type UserUncheckedCreateWithoutCardioLogsInput = {
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCardioLogsInput = {
@@ -1245,6 +1299,8 @@ export type UserUpdateWithoutCardioLogsInput = {
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCardioLogsInput = {
@@ -1277,6 +1333,8 @@ export type UserUncheckedUpdateWithoutCardioLogsInput = {
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutWorkoutPlansInput = {
@@ -1308,6 +1366,8 @@ export type UserCreateWithoutWorkoutPlansInput = {
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutWorkoutPlansInput = {
@@ -1340,6 +1400,8 @@ export type UserUncheckedCreateWithoutWorkoutPlansInput = {
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutWorkoutPlansInput = {
@@ -1387,6 +1449,8 @@ export type UserUpdateWithoutWorkoutPlansInput = {
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWorkoutPlansInput = {
@@ -1419,6 +1483,8 @@ export type UserUncheckedUpdateWithoutWorkoutPlansInput = {
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMealsInput = {
@@ -1450,6 +1516,8 @@ export type UserCreateWithoutMealsInput = {
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMealsInput = {
@@ -1482,6 +1550,8 @@ export type UserUncheckedCreateWithoutMealsInput = {
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMealsInput = {
@@ -1529,6 +1599,8 @@ export type UserUpdateWithoutMealsInput = {
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMealsInput = {
@@ -1561,6 +1633,8 @@ export type UserUncheckedUpdateWithoutMealsInput = {
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutFriendsInput = {
@@ -1592,6 +1666,8 @@ export type UserCreateWithoutFriendsInput = {
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFriendsInput = {
@@ -1624,6 +1700,8 @@ export type UserUncheckedCreateWithoutFriendsInput = {
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFriendsInput = {
@@ -1660,6 +1738,8 @@ export type UserCreateWithoutFriendOfInput = {
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFriendOfInput = {
@@ -1692,6 +1772,8 @@ export type UserUncheckedCreateWithoutFriendOfInput = {
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFriendOfInput = {
@@ -1739,6 +1821,8 @@ export type UserUpdateWithoutFriendsInput = {
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFriendsInput = {
@@ -1771,6 +1855,8 @@ export type UserUncheckedUpdateWithoutFriendsInput = {
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUpsertWithoutFriendOfInput = {
@@ -1813,6 +1899,8 @@ export type UserUpdateWithoutFriendOfInput = {
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFriendOfInput = {
@@ -1845,6 +1933,8 @@ export type UserUncheckedUpdateWithoutFriendOfInput = {
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPostsInput = {
@@ -1876,6 +1966,8 @@ export type UserCreateWithoutPostsInput = {
   workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
   friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPostsInput = {
@@ -1908,6 +2000,8 @@ export type UserUncheckedCreateWithoutPostsInput = {
   workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
   friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
   friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPostsInput = {
@@ -1955,6 +2049,8 @@ export type UserUpdateWithoutPostsInput = {
   workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
   friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPostsInput = {
@@ -1987,6 +2083,308 @@ export type UserUncheckedUpdateWithoutPostsInput = {
   workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
   friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
   friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutLikesInput = {
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutLikesInput = {
+  id?: number
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutLikesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLikesInput, Prisma.UserUncheckedCreateWithoutLikesInput>
+}
+
+export type UserUpsertWithoutLikesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLikesInput, Prisma.UserUncheckedUpdateWithoutLikesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLikesInput, Prisma.UserUncheckedCreateWithoutLikesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLikesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLikesInput, Prisma.UserUncheckedUpdateWithoutLikesInput>
+}
+
+export type UserUpdateWithoutLikesInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLikesInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutCommentsInput = {
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutCommentsInput = {
+  id?: number
+  email: string
+  password: string
+  name: string
+  profilePicture?: string | null
+  height?: number | null
+  weight?: number | null
+  weightGoal?: number | null
+  weeklyGoal?: number | null
+  age?: number | null
+  goal?: string | null
+  activityLevel?: string | null
+  dailyCalorieGoal?: number | null
+  onboarded?: boolean
+  benchPR?: number | null
+  squatPR?: number | null
+  deadliftPR?: number | null
+  milePR?: string | null
+  fiveKPR?: string | null
+  tenKPR?: string | null
+  halfMarathonPR?: string | null
+  marathonPR?: string | null
+  createdAt?: Date | string
+  workouts?: Prisma.WorkoutUncheckedCreateNestedManyWithoutUserInput
+  cardioLogs?: Prisma.CardioLogUncheckedCreateNestedManyWithoutUserInput
+  meals?: Prisma.MealUncheckedCreateNestedManyWithoutUserInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedCreateNestedManyWithoutUserInput
+  friends?: Prisma.FriendshipUncheckedCreateNestedManyWithoutUserInput
+  friendOf?: Prisma.FriendshipUncheckedCreateNestedManyWithoutFriendInput
+  posts?: Prisma.PostUncheckedCreateNestedManyWithoutUserInput
+  likes?: Prisma.LikeUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutCommentsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCommentsInput, Prisma.UserUncheckedCreateWithoutCommentsInput>
+}
+
+export type UserUpsertWithoutCommentsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCommentsInput, Prisma.UserUncheckedUpdateWithoutCommentsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCommentsInput, Prisma.UserUncheckedCreateWithoutCommentsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCommentsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCommentsInput, Prisma.UserUncheckedUpdateWithoutCommentsInput>
+}
+
+export type UserUpdateWithoutCommentsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCommentsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  profilePicture?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  height?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weight?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weeklyGoal?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  age?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  goal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dailyCalorieGoal?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  onboarded?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  benchPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  squatPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  deadliftPR?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  milePR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fiveKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tenKPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  halfMarathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  marathonPR?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  workouts?: Prisma.WorkoutUncheckedUpdateManyWithoutUserNestedInput
+  cardioLogs?: Prisma.CardioLogUncheckedUpdateManyWithoutUserNestedInput
+  meals?: Prisma.MealUncheckedUpdateManyWithoutUserNestedInput
+  workoutPlans?: Prisma.WorkoutPlanUncheckedUpdateManyWithoutUserNestedInput
+  friends?: Prisma.FriendshipUncheckedUpdateManyWithoutUserNestedInput
+  friendOf?: Prisma.FriendshipUncheckedUpdateManyWithoutFriendNestedInput
+  posts?: Prisma.PostUncheckedUpdateManyWithoutUserNestedInput
+  likes?: Prisma.LikeUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -2002,6 +2400,8 @@ export type UserCountOutputType = {
   friends: number
   friendOf: number
   posts: number
+  likes: number
+  comments: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2012,6 +2412,8 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   friends?: boolean | UserCountOutputTypeCountFriendsArgs
   friendOf?: boolean | UserCountOutputTypeCountFriendOfArgs
   posts?: boolean | UserCountOutputTypeCountPostsArgs
+  likes?: boolean | UserCountOutputTypeCountLikesArgs
+  comments?: boolean | UserCountOutputTypeCountCommentsArgs
 }
 
 /**
@@ -2073,6 +2475,20 @@ export type UserCountOutputTypeCountPostsArgs<ExtArgs extends runtime.Types.Exte
   where?: Prisma.PostWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLikesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LikeWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CommentWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2105,6 +2521,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   friends?: boolean | Prisma.User$friendsArgs<ExtArgs>
   friendOf?: boolean | Prisma.User$friendOfArgs<ExtArgs>
   posts?: boolean | Prisma.User$postsArgs<ExtArgs>
+  likes?: boolean | Prisma.User$likesArgs<ExtArgs>
+  comments?: boolean | Prisma.User$commentsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -2195,6 +2613,8 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   friends?: boolean | Prisma.User$friendsArgs<ExtArgs>
   friendOf?: boolean | Prisma.User$friendOfArgs<ExtArgs>
   posts?: boolean | Prisma.User$postsArgs<ExtArgs>
+  likes?: boolean | Prisma.User$likesArgs<ExtArgs>
+  comments?: boolean | Prisma.User$commentsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -2210,6 +2630,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     friends: Prisma.$FriendshipPayload<ExtArgs>[]
     friendOf: Prisma.$FriendshipPayload<ExtArgs>[]
     posts: Prisma.$PostPayload<ExtArgs>[]
+    likes: Prisma.$LikePayload<ExtArgs>[]
+    comments: Prisma.$CommentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -2636,6 +3058,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   friends<T extends Prisma.User$friendsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$friendsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FriendshipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   friendOf<T extends Prisma.User$friendOfArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$friendOfArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FriendshipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   posts<T extends Prisma.User$postsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  likes<T extends Prisma.User$likesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$likesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  comments<T extends Prisma.User$commentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$commentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3246,6 +3670,54 @@ export type User$postsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
   take?: number
   skip?: number
   distinct?: Prisma.PostScalarFieldEnum | Prisma.PostScalarFieldEnum[]
+}
+
+/**
+ * User.likes
+ */
+export type User$likesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Like
+   */
+  select?: Prisma.LikeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Like
+   */
+  omit?: Prisma.LikeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LikeInclude<ExtArgs> | null
+  where?: Prisma.LikeWhereInput
+  orderBy?: Prisma.LikeOrderByWithRelationInput | Prisma.LikeOrderByWithRelationInput[]
+  cursor?: Prisma.LikeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LikeScalarFieldEnum | Prisma.LikeScalarFieldEnum[]
+}
+
+/**
+ * User.comments
+ */
+export type User$commentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Comment
+   */
+  select?: Prisma.CommentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Comment
+   */
+  omit?: Prisma.CommentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CommentInclude<ExtArgs> | null
+  where?: Prisma.CommentWhereInput
+  orderBy?: Prisma.CommentOrderByWithRelationInput | Prisma.CommentOrderByWithRelationInput[]
+  cursor?: Prisma.CommentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CommentScalarFieldEnum | Prisma.CommentScalarFieldEnum[]
 }
 
 /**

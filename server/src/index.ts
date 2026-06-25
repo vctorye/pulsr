@@ -9,6 +9,8 @@ import cardioRouter from "./routes/cardio"
 import workoutsRouter from "./routes/workouts"
 import friendsRouter from "./routes/friends"
 import postsRouter from "./routes/posts"
+import likesRouter from "./routes/likes"
+import commentsRouter from "./routes/comments"
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +33,11 @@ app.use("/cardio", cardioRouter)
 app.use("/friends", friendsRouter)
 
 app.use("/posts", postsRouter)
+
+app.use("/likes", likesRouter)
+
+app.use("/comments", commentsRouter)
+
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });

@@ -36,7 +36,7 @@ router.post("/", async (req: Request, res: Response) => {
 })
 
 router.delete("/:id", async (req: Request, res: Response) => {
-    const id = Number(req.params.id);;
+    const id = Number(req.params.id);
     await prisma.exercise.delete({ where: { id } })
     res.json({success: true}) 
 })

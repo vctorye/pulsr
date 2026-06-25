@@ -85,6 +85,16 @@ export type Friendship = Prisma.FriendshipModel
  */
 export type Post = Prisma.PostModel
 /**
+ * Model Like
+ * 
+ */
+export type Like = Prisma.LikeModel
+/**
+ * Model Comment
+ * 
+ */
+export type Comment = Prisma.CommentModel
+/**
  * Model FoodItem
  * 
  */
