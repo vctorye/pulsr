@@ -1,16 +1,15 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
+import { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, ScrollView, Image, useColorScheme, TouchableOpacity } from "react-native";
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import { useRouter } from 'expo-router';
+import { useAuth } from '@/contexts/AuthContext';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import Entypo from '@expo/vector-icons/Entypo';
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
@@ -20,11 +19,31 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+  const {user, token} = useAuth();
+  const [profileData, setProfileData] = useState<any>(null)
+  useEffect(() => {
+    fetch(`http://localhost:3000/users/${user?.id}`, {
+      headers: {Authorization: `Bearer ${token}`}
+    })
+    .then(res => res.json())
+    .then(data => setProfileData(data))
+  }, [user])
   return (
     <Tabs
       screenOptions={{
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: true,
+        headerShadowVisible: true,
+        headerLeft: () => (
+            <View>
+              {profileData?.profilePicture && <Image source={{ uri: profileData.profilePicture }} style={{ width: 30, height: 30, borderRadius: 15, marginBottom:15, marginLeft:15, 
+                shadowColor: '#000',
+          shadowOffset: { width: 0, height: 5 },
+          shadowOpacity: 1,
+          shadowRadius: 10,
+              }} />}
+            </View>
+          ),
+        headerStyle:{backgroundColor: '#fcf1d3e9', height: 95},
         tabBarActiveTintColor: '#50a2fa',
         tabBarInactiveTintColor: '#5c5c5c78',
         tabBarStyle: {
@@ -33,20 +52,19 @@ export default function TabLayout() {
           width: 330,
           borderRadius: 35,
           marginLeft: 36,
-          height: 55,
-          backgroundColor: '#fff0c8e9',
+          height: 65,
+          backgroundColor: '#fcf1d3e9',
           shadowColor: '#000',
           shadowOffset: { width: 1, height: 4 },
           shadowOpacity: .3,
           shadowRadius: 10,
           elevation: 8,
-          
         }
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Homepage',
+          title: 'Home',
           tabBarIcon: ({ color }) => <Entypo name="home" size={16} color={color} />,
         }}
       />
@@ -70,6 +88,13 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => <AntDesign name="profile" size={16} color={color} />,
+          headerShown:true,
+          
+          headerRight: () => (
+              <Link href="/settings" style={{ marginRight: 16 }}>
+                <Entypo name="dots-three-horizontal" size={24} color="black" />              
+              </Link>
+          ),
         }}
       />
     </Tabs>

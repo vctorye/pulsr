@@ -63,6 +63,14 @@ function RootLayoutNav() {
           <Stack.Screen name="post-workout" options={{ presentation: 'modal', headerShown: false }} />
           <Stack.Screen name="post-meal" options={{ presentation: 'modal', headerShown: false }} />
           <Stack.Screen name="add-friend" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="settings" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="activities" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="best-efforts" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="stats" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="goals" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="following" options={{ presentation: 'modal', headerShown: false }} />
+          <Stack.Screen name="followers" options={{ presentation: 'modal', headerShown: false }} />
+
         </Stack>
       </ThemeProvider>
     </AuthProvider>

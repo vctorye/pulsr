@@ -78,9 +78,10 @@ export default function MealsScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16 }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16,     justifyContent: 'center'
+ }}>
         <TouchableOpacity onPress={goBack}><Text>←</Text></TouchableOpacity>
-        <Text>{selectedDate.toISOString().split('T')[0]}</Text>
+        <Text style={{fontSize: 26, fontWeight:900, color: '#2f2d2deb'}}>{selectedDate.toISOString().split('T')[0]}</Text>
         <TouchableOpacity onPress={goForward}><Text>→</Text></TouchableOpacity>
       </View>
       <Text style={[styles.calorieCount, { color: remaining < 0 ? 'red' : 'green' }]}>
