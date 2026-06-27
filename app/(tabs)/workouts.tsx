@@ -91,10 +91,10 @@ export default function WorkoutScreen() {
           </View>
         ))}
         <View >
-          <TextInput placeholder="Exercise name" value={exerciseName} onChangeText={setExerciseName} />
-          <TextInput placeholder="Sets" value={sets === 0 ? '' : String(sets)} onChangeText={(val) => setSets(Number(val))} keyboardType="numeric" />
-          <TextInput placeholder="Reps" value={reps === 0 ? '' : String(reps)} onChangeText={(val) => setReps(Number(val))} keyboardType="numeric" />
-          <TextInput placeholder="Weight (lbs)" value={weight === 0 ? '' : String(weight)} onChangeText={(val) => setWeight(Number(val))} keyboardType="numeric" />
+          <TextInput style={styles.inputList} placeholder="Exercise name" value={exerciseName} onChangeText={setExerciseName} />
+          <TextInput style={styles.inputList} placeholder="Sets" value={sets === 0 ? '' : String(sets)} onChangeText={(val) => setSets(Number(val))} keyboardType="numeric" />
+          <TextInput style={styles.inputList} placeholder="Reps" value={reps === 0 ? '' : String(reps)} onChangeText={(val) => setReps(Number(val))} keyboardType="numeric" />
+          <TextInput style={styles.inputList} placeholder="Weight (lbs)" value={weight === 0 ? '' : String(weight)} onChangeText={(val) => setWeight(Number(val))} keyboardType="numeric" />
         </View>
         <TouchableOpacity onPress={addWorkout}><Text>Add Exercise</Text></TouchableOpacity>
       </View>
@@ -125,14 +125,14 @@ const styles = StyleSheet.create({
   },
   exerciseName: {
     fontSize:18,
-    
-
+    color: '#fff',
+    fontWeight: 'bold'
   },
   exerciseContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#50a2fa',
     padding: 12,
     borderRadius: 3,
     shadowColor: '#000',
@@ -142,15 +142,17 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   postWorkout: {
-    backgroundColor: '#50a2fa', padding: 14, borderRadius: 10, alignItems: 'center', color: '#fff',
+    backgroundColor: '#fcf1d3e9', padding: 14, borderRadius: 10, alignItems: 'center', color: '#fff',
     marginLeft: 40,
-    marginRight: 40
+    marginRight: 40,
+    shadowColor: '#000', shadowOffset: {width: 1, height: 1}, shadowOpacity: 0.3, shadowRadius: 2 
   },
   postWorkoutText: {
-    color: '#fff', 
-    fontWeight: '600'
+    color: '#ffffff', 
+    fontWeight: '900',
+    shadowColor: '#000', shadowOffset: {width: 1, height: 1}, shadowOpacity: 0.3, shadowRadius: 8 
   },
-  workoutList: {
-
+  inputList: {
+     marginBottom: 20, padding: 16, borderRadius: 12, backgroundColor: '#ffffff',shadowColor: '#000', shadowOffset: {width: 1, height: 1}, shadowOpacity: 0.1, shadowRadius: 2 
   }
 });

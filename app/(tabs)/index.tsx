@@ -15,7 +15,7 @@ export default function HomeScreen() {
   const router = useRouter()
   const { user, token } = useAuth();
   const [posts, setPosts] = useState<any[]>([]);
-  const [comment, setComment] = useState<any>('')
+  const [comment, setComment] = useState<{[postId: number]: string}>({})
 
   const fetchFeed = () => {
     if (!user?.id) return;
@@ -44,8 +44,8 @@ export default function HomeScreen() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       },
-      body: JSON.stringify({ userId: user?.id, postId, text: comment })
-    }).then(() => { setComment(''); fetchFeed() })
+      body: JSON.stringify({ userId: user?.id, postId, text: comment[postId] })
+    }).then(() => { setComment(prev => ({ ...prev, [postId]: '' })); fetchFeed() })
   }
 
   useFocusEffect(
@@ -56,12 +56,9 @@ export default function HomeScreen() {
 
   return (
 <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 80 }}>
-      <TouchableOpacity onPress={() => router.push({ pathname: '/add-friend' })}>
-        <Text>Add Friend</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push({ pathname: '/onboarding' })}>
+      {/* <TouchableOpacity onPress={() => router.push({ pathname: '/onboarding' })}>
         <Text>onboarding</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       {posts.map((p: any) => (
         <View key={p.id} style={styles.workoutPost}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 }}>
@@ -100,7 +97,7 @@ export default function HomeScreen() {
             </View>
           ))}
           <View style={{ display: 'flex', flexDirection: 'row' , marginTop: 12, justifyContent: 'space-between', }}>
-            <TextInput placeholder="Add a comment..." value={comment} onChangeText={setComment} />
+            <TextInput placeholder="Add a comment..." value={comment[p.id] ?? ''} onChangeText={(text) => setComment(prev => ({ ...prev, [p.id]: text }))} />
             <TouchableOpacity onPress={() => commentPost(p.id)}>
               <Ionicons name="arrow-up-circle-sharp" size={24} color="black" />
             </TouchableOpacity>

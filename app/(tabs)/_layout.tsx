@@ -66,7 +66,13 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <Entypo name="home" size={16} color={color} />,
+          headerRight: () => (
+              <Link href="/add-friend" style={{ marginRight: 16 }}>
+                <AntDesign name="user-add" size={24} color="black" />              
+              </Link>
+          ),
         }}
+        
       />
       <Tabs.Screen
         name="workouts"

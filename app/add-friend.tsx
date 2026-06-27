@@ -55,29 +55,56 @@ export default function addFriend() {
     return(
         <View style={styles.container}>
             <TextInput
-                placeholder="Search your friends"
+                placeholder="Search for friends..."
                 onChangeText={setSearchQuery}
                 value={searchQuery}
+                style={styles.searchInput}
             />
             <ScrollView>
                 {filteredResults.map((u: any) => (
-                    <View key={u.id}>
-                        <Text>{u.name}</Text>
-                        <Text>{u.email}</Text>
-                        <TouchableOpacity onPress={() => {
+                    <View key={u.id} style={styles.resultRow}>
+                        <View>
+                            <Text style={styles.name}>{u.name}</Text>
+                            <Text style={styles.email}>{u.email}</Text>
+                        </View>
+                        <TouchableOpacity style={styles.addButton} onPress={() => {
                             setFriendId(u.id);
                             addFriend(u.id);
                         }}>
-                            <Text>Add</Text>
+                            <Text style={styles.addButtonText}>Follow</Text>
                         </TouchableOpacity>
                     </View>
-                    
                 ))}
             </ScrollView>
         </View>
     )
 }
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16},
-
+    container: { flex: 1, padding: 16, backgroundColor: '#fffbf0' },
+    searchInput: {
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 12,
+        marginBottom: 16,
+        shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.1, shadowRadius: 4,
+    },
+    resultRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: '#fff',
+        padding: 14,
+        borderRadius: 10,
+        marginBottom: 8,
+        shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.08, shadowRadius: 4,
+    },
+    name: { fontWeight: 'bold', fontSize: 15 },
+    email: { color: '#888', fontSize: 13, marginTop: 2 },
+    addButton: {
+        backgroundColor: '#50a2fa',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        borderRadius: 20,
+    },
+    addButtonText: { color: '#fff', fontWeight: '600', fontSize: 13 },
 });

@@ -18,6 +18,18 @@ export default function Profile() {
   const [myPosts, setMyPosts] = useState<any[]>([])
   const [following, setFollowing] = useState<any[]>([]);
   const [followers, setFollowers] = useState<any[]>([]);
+  const markedDates: any = {}
+  myPosts.forEach((p) => {
+      const date = p.createdAt.split('T')[0]
+      markedDates[date] = {
+          customStyles: {
+              container: { backgroundColor: '#ff803b', borderRadius: 20 },
+              text: { color: '#fff', fontWeight: 'bold' }
+          }
+      }
+  })
+
+ 
 
 
   useEffect(() => {
@@ -86,20 +98,18 @@ export default function Profile() {
         <Text style={styles.sectionTitle}>Stats</Text>
       </TouchableOpacity>
       <Calendar
-        style={{marginBottom:100}}
+        style={{marginBottom:100,backgroundColor:'transparent',    }}
+        theme={{backgroundColor:'transparent', calendarBackground: 'transparent',    dayTextColor: '#000'}}
         onDayPress={day => {
           console.log('selected day', day);
         }}
+        markingType="custom"
+        markedDates={markedDates}
+
       />
       <TouchableOpacity onPress={() => { logout(); router.replace('/login'); }} style={{ margin: 20, padding: 14, backgroundColor: '#ff3b30', borderRadius: 10, alignItems: 'center' }}>
         <Text style={{ color: '#fff', fontWeight: 'bold' }}>Log Out</Text>
       </TouchableOpacity>
-      <Calendar
-        style={{marginBottom:100}}
-        onDayPress={day => {
-          console.log('selected day', day);
-        }}
-      />
     </ScrollView>
   );
 }
@@ -149,4 +159,5 @@ const makeStyles = (colors: typeof Colors.light) => StyleSheet.create({
     fontSize: 14,
     color: colors.text,
   },
+  
 });
